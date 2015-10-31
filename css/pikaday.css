@@ -1,0 +1,321 @@
+@charset "UTF-8";
+
+/* Clearing Browser CSS */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* End Clearing Browser CSS */ 
+
+.pika-single {
+    z-index: 9999;
+    display: block;
+    position: relative;
+    color: #fff;
+    text-transform: uppercase;
+    background: #232323;
+    border-bottom-color: #bbb;
+    font-family: "AvenirNext-Medium", Avenir, "Helvetica Neue", Helvetica, Arial, sans;
+    background-color: #232323;
+    padding-top: 3.5rem;
+}
+
+tr {
+    height: 50px;
+}
+
+/*
+clear child float (pika-lendar), using the famous micro clearfix hack
+http://nicolasgallagher.com/micro-clearfix-hack/
+*/
+.pika-single:before,
+.pika-single:after {
+    content: " ";
+    display: table;
+}
+.pika-single:after { clear: both }
+.pika-single { *zoom: 1 }
+
+.pika-single.is-hidden {
+    display: none;
+}
+
+.pika-single.is-bound {
+    box-shadow: 0 5px 15px -5px rgba(0,0,0,.5);
+    width: 100%;
+    height: 100%;
+}
+
+.pika-lendar {
+    width: 100%;
+    height: 100%;
+    background: #232323;
+}
+
+.pika-title {
+    position: relative;
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.pika-label {
+    display: inline-block;
+    position: relative;
+    z-index: 9999;
+    overflow: hidden;
+    margin: 0;
+    padding: 5px 3px;
+    font-size: 30px;
+    line-height: 20px;
+    font-weight: bold;
+}
+.pika-title select {
+    cursor: pointer;
+    position: absolute;
+    z-index: 9998;
+    margin: 0;
+    left: 0;
+    top: 5px;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    color: #FFF;
+    margin-bottom: .3rem;
+}
+
+.pika-prev,
+.pika-next {
+    display: block;
+    cursor: pointer;
+    margin-top: 18%;
+    position: relative;
+    outline: none;
+    border: 0;
+    padding: 0;
+    width: 20px;
+    height: 30px;
+    text-indent: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.pika-prev:hover,
+.pika-next:hover {
+    opacity: 1;
+}
+
+.pika-prev,
+.is-rtl .pika-next {
+    float: left;
+    background-image:url("../arrow-previous.svg");
+    left: 14%;
+    background-color: #232323;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    -webkit-transition-duration: .2s; 
+    transition-duration: .2s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+}
+
+.pika-prev:hover {
+    -ms-transform: scale(1.08,1.08); 
+    -webkit-transform: scale(1.08,1.08); 
+    transform: scale(1.08,1.08);
+}
+
+.pika-next,
+.is-rtl .pika-prev {
+    float: right;
+    background-image:url("../arrow-next.svg");
+    right: 14%;
+    background-color: #232323;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    /* -ms-transform: rotate(180deg); 
+    -webkit-transform: rotate(180deg); 
+    transform: rotate(180deg); */
+    -webkit-transition-duration: .2s; 
+    transition-duration: .2s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+}
+
+.pika-next:hover {
+    -ms-transform: scale(1.08,1.08); 
+    -webkit-transform: scale(1.08,1.08); 
+    transform: scale(1.08,1.08);
+}
+
+.pika-prev.is-disabled,
+.pika-next.is-disabled {
+    cursor: default;
+    opacity: .2;
+}
+
+.pika-select {
+    display: inline-block;
+    *display: inline;
+}
+
+.pika-table {
+    width: 680px;
+    height: 60%;
+    margin: auto;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 0;
+    background-color: #232323;
+    /* border: 1px solid #2B2B2B; */
+}
+
+.pika-table th,
+.pika-table td {
+    width: 14.285714285714286%;
+    padding: 0;
+    background-color: #232323;
+    height: 50px;
+}
+
+.pika-table th {
+    color: #A0A0A0;
+    font-size: 14px;
+    line-height: 25px;
+    text-transform: none;
+    font-weight: normal;
+    /* border: 1px solid #2B2B2B; */
+    background-color: #232323;
+}
+
+.pika-button {
+    cursor: pointer;
+    display: block;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    outline: none;
+    border: 0;
+    width: 27%;
+    height: 27px;
+    margin: auto;
+    padding: 5px;
+    text-align: center;
+    color: #F9F9F9;
+    background-color: #232323;
+    font-size: 14px;
+    line-height: 15px;
+    font-weight: 600;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    -webkit-transition-duration: .2s; 
+    transition-duration: .2s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+}
+
+.pika-week {
+    font-size: 11px;
+    color: #999;
+}
+
+.is-today .pika-button {
+    background: #232323;
+    border: 1px solid #ff8000;
+    color: #ffffff;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+
+.is-selected .pika-button {
+    color: #fff;
+    font-weight: bold;
+    background: #ff8000;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+
+.is-inrange .pika-button {
+    background: #D5E9F7;
+}
+
+.is-startrange .pika-button {
+    color: #fff;
+    background: #6CB31D;
+    box-shadow: none;
+    border-radius: 3px;
+}
+
+.is-endrange .pika-button {
+    color: #fff;
+    background: #33aaff;
+    box-shadow: none;
+    border-radius: 3px;
+}
+
+.is-disabled .pika-button {
+    pointer-events: none;
+    cursor: default;
+    color: #999;
+    opacity: .3;
+}
+
+.pika-button:hover {
+    color: #fff;
+    background: #ff8000;
+    box-shadow: none;
+}
+
+/* styling for abbr */
+.pika-table abbr {
+    border-bottom: none;
+    cursor: help;
+}
+

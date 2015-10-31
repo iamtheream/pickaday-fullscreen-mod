@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <title>Cal-en-dar</title>
+    <link rel="stylesheet" href="css/pikaday.css">
+</head>
+<body>
+
+    <label for="datepicker">Date:</label>
+    <br>
+    <input type="text" id="datepicker">
+
+    <script src="pikaday.js"></script>
+    <script>
+
+    var picker = new Pikaday(
+    {
+        field: document.getElementById('datepicker'),
+        firstDay: 1,
+        minDate: new Date(2015, 9, 30),
+        maxDate: new Date(2020, 12, 31),
+        yearRange: [2015,2020],
+        /* disableDayFn: function (date) {
+            return date.toDateString().search('Mon') > -1
+        } */
+    });
+
+    </script>
+</body>
+</html>
