@@ -1,0 +1,13 @@
+
+=grid-container
+  +outer-container
+  min-width: 0.88 * 320px
+  width: 88vw
+
+  +from($bp-tablet)
+    min-width: 0.95 * $bp-tablet
+    width: 90vw
+
+  +from($bp-desktop)
+    width: 95vw
+    max-width: $grid-max-width
