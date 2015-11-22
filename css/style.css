@@ -88,6 +88,7 @@ abbr {
 .pika-prev,
 .is-rtl .pika-next {
   float: left;
+  background-image: "../arrow-previous.svg";
   left: 6rem;
   background-color: #0E0E0E;
   width: 45px;
@@ -107,6 +108,7 @@ abbr {
 .pika-next,
 .is-rtl .pika-prev {
   float: right;
+  background-image: "../arrow-next.svg";
   right: 6rem;
   background-color: #0E0E0E;
   width: 45px;

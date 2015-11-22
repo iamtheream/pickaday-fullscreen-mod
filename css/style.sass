@@ -1,14 +1,18 @@
 @import '_grid.sass'
 
+// image-url arguments:
+// $path: path relative to images directory in config.rb
+// $path-only: if true, will cause only the path to be returned instead of a `url()` function
+// $cache-buster: When set to `false` no cache buster will be used (i.e. `?313420982`)
 
 //mixins
-@mixin scale ()
+=scale ()
     -ms-transform: scale(1.08,1.08)
     -webkit-transform: scale(1.08,1.08)
     transform: scale(1.08,1.08)
 
 
-@mixin hover() 
+=hover() 
     -webkit-transition-duration: .1s
     transition-duration: .1s
     -webkit-transition-timing-function: ease-out
@@ -50,8 +54,7 @@ abbr
 .pika-single:after 
     content: " "
     display: table
-
-.pika-single:after  clear both 
+     
 
 .pika-single.is-hidden 
     display: none
@@ -125,7 +128,7 @@ abbr
 .pika-prev,
 .is-rtl .pika-next 
     float: left
-    background-image:url("../arrow-previous.svg")
+    background-image: ("../arrow-previous.svg")
     left: 6rem
     background-color: $modal-background
     width: 45px
@@ -133,9 +136,9 @@ abbr
     border-radius: 50%
     border: 1px solid $white-text
 
-    @include hover
+    +hover
     &:hover 
-        @include scale
+        +scale
     
 
 
@@ -143,7 +146,7 @@ abbr
 .pika-next,
 .is-rtl .pika-prev 
     float: right
-    background-image:url("../arrow-next.svg")
+    background-image: ("../arrow-next.svg")
     right: 6rem
     background-color: $modal-background
     width: 45px
@@ -151,9 +154,9 @@ abbr
     border-radius: 50%
     border: 1px solid $white-text
 
-    @include hover
+    +hover
     &:hover 
-        @include scale
+        +scale
     
 
 
@@ -210,7 +213,7 @@ abbr
     height: 35px
     border-radius: 50%
 
-    @include hover
+    +hover
     &:hover 
         color: $white-text
         background: #ff8000
