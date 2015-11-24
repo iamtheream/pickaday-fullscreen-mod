@@ -88,7 +88,7 @@ abbr {
 .pika-prev,
 .is-rtl .pika-next {
   float: left;
-  background-image: "../arrow-previous.svg";
+  background-image: url("../arrow-previous.svg");
   left: 6rem;
   background-color: #0E0E0E;
   width: 45px;
@@ -108,7 +108,7 @@ abbr {
 .pika-next,
 .is-rtl .pika-prev {
   float: right;
-  background-image: "../arrow-next.svg";
+  background-image: url("../arrow-next.svg");
   right: 6rem;
   background-color: #0E0E0E;
   width: 45px;
@@ -237,7 +237,7 @@ abbr {
     left: 12rem; } }
 @media (max-width: 769px) {
   .pika-table {
-    height: 40%; }
+    height: 35%; }
 
   .pika-table th,
   .pika-table td {
@@ -254,6 +254,9 @@ abbr {
   .pika-label {
     font-size: 1.15rem; }
 
+  .pika-title {
+    margin-bottom: 1.25rem; }
+
   .pika-next,
   .is-rtl .pika-prev {
     right: 5rem; }
@@ -262,6 +265,17 @@ abbr {
   .is-rtl .pika-next {
     left: 5rem; } }
 @media (max-width: 450px) {
+  tr {
+    height: 46px; }
+
+  .pika-table th,
+  .pika-table td {
+    height: 35px;
+    line-height: 18px; }
+
+  .pika-single {
+    padding-top: 2rem; }
+
   .pika-next,
   .is-rtl .pika-prev {
     right: 2.5rem; }
